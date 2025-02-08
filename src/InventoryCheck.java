@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // this class represents a check of inventory and is meant to update quantities of Items
 public class InventoryCheck {
     String date;
-    ArrayList<String> quantities;
+    ArrayList<ArrayList<Item>> quantities;
 
     public InventoryCheck () {
         date = "1/1/2000";
