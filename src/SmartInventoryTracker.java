@@ -6,27 +6,45 @@ import java.util.Scanner;
 
 public class SmartInventoryTracker {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        String userFile = scnr.nextLine();
-        FileInputStream inventoryFile = null;
-        try {
-            inventoryFile = new FileInputStream(userFile);
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("Could not open input file - ending program");
-            System.exit(1);
-        }
 
-        Scanner reader = new Scanner(inventoryFile);
-        while (reader.hasNextLine()) {
-            String data = reader.nextLine();
-            System.out.println(data);
-        }
-        reader.close();
+//        FileInputStream inventoryFile = null;
+//        String fileName = null;
+//        try {
+//            inventoryFile = new FileInputStream(args[0]);
+//            fileName = args[0];
+//        }
+//        catch (FileNotFoundException e) {
+//            System.out.println("Could not open " + args[0] + " - ending program");
+//            System.exit(1);
+//        }
+//
+//        Scanner reader = new Scanner(inventoryFile);
+//        while (reader.hasNextLine()) {
+//            String data = reader.nextLine();
+//            System.out.println(data);
+//        }
+//        reader.close();
+//
+//        Item newItem = new Item("Chocolate", 6.95, "syrup", 0);
+//
+//
+//        FileOutputStream myFile = null;
+//
+//        try {
+//            myFile = new FileOutputStream(fileName, true);
+//
+//        }
+//        catch(FileNotFoundException e) {
+//            System.out.println("File could not be opened for output - closing file");
+//            System.exit(1);
+//        }
+//
+//        PrintWriter writer = new PrintWriter(myFile);
+//        writer.println(newItem.getItemName() + "," + newItem.getItemQuantity());
+//        writer.flush();
+//        writer.close();
 
-        PrintWriter writer = new PrintWriter() {
 
-        }
 
     }
 
