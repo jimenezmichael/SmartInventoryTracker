@@ -1,45 +1,92 @@
 public class Item {
-    private String itemName = null;
-    private double itemPrice = 0;
-    private String itemType = null;
-    private int itemQuantity = 0;
+    private String name;
+    private double price;
+    private String type;
+    private int currentQuantity;
+    private int criticalStock;
+    public LinkedList quantityHistory;
 
-    public Item (String name, double price, String type, int quantity) {
-        itemName = name;
-        itemPrice = price;
-        itemType = type;
-        itemQuantity = quantity;
+    // default constructor
+    public Item() {
+        name = null;
+        price = 0;
+        type = null;
+        currentQuantity = 0;
+        criticalStock = 0;
+        quantityHistory = new LinkedList();
+        quantityHistory.addNode(currentQuantity);
     }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public double getItemPrice() {
-        return itemPrice;
-    }
-
-    public String getItemType() {
-        return itemType;
-    }
-    public int getItemQuantity() {
-        return itemQuantity;
-    }
-
-    public void setItemName(String name) {
-        itemName = name;
+    // parameterized constructor
+    public Item (String name, double price, String type, int quantity, int criticalStock) {
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.currentQuantity = quantity;
+        this.criticalStock = criticalStock;
+        quantityHistory = new LinkedList();
+        quantityHistory.addNode(currentQuantity);
     }
 
-    public void setItemPrice(double price) {
-        itemPrice = price;
+    // copy constructor
+    public Item(Item i) {
+        name = i.name;
+        price = i.price;
+        type = i.type;
+        currentQuantity = i.currentQuantity;
+        criticalStock = i.criticalStock;
     }
 
-    public void setItemType(String type) {
-        itemType = type;
+    // getters
+    public String getName() {
+        return name;
     }
 
-    public void setItemQuantity(int quantity) {
-        itemQuantity = quantity;
+    public double getPrice() {
+        return price;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getCurrentQuantity() {
+        return currentQuantity;
+    }
+
+    public int getCriticalStock()   {
+        return criticalStock;
+    }
+
+    public LinkedList getQuantityHistory() {
+        return new LinkedList(quantityHistory);
+    }
+
+    // setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setCurrentQuantity(int currentQuantity) {
+        this.currentQuantity = currentQuantity;
+        quantityHistory.addNode(currentQuantity);
+    }
+
+    public void setCriticalStock(int criticalStock) {
+        this.criticalStock = criticalStock;
+    }
+
+    @Override
+    public String toString() {
+        return "Item Name: " + name;
+    }
+
 
 }
